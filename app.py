@@ -36,29 +36,35 @@ def thankyou():
 def error():
     massage=request.args.get("massage","")
     return render_template("error.html",massage=massage)
-#取得景點資料列表
-# @app.route("/api/attractions",methods=["GET"]) 
-# def attractions():
 
 #根據景點編號取得景點資料
-@app.route("/api/attraction/{attractionId}",methods=["GET"]) 
-def attractionId():
-    attractionId = request.args.get("id"," ")
-    connection_object=connection_pool.get_connection()
-    mycursor = connection_object.cursor
-    sql = " SELECT (id, name, category, description, address, transport, mrt, lat, lng, images_image FROM attractions WHERE `attractionId`=%s"
-    val = (attractionId,)
-    mycursor.execute(sql,val)
-    myresult=mycursor.fetchall()
-    print(myresult)
+@app.route("/api/attraction/<attractionId>",methods=["GET"]) 
+def getattraction(attractionId):
     try:
-    #     connection_object=connection_pool.get_connection() 
-    #     cursor=connection_object.cursor()
-    #     cursor.execute(sql,val)
-    #     connection_object.commit()
-      #使用jsonify来讲定义好的数据转换成json格式，并且返回给前端
-        return jsonify({
-                "data":{
+        connection_object=connection_pool.get_connection()
+        mycursor = connection_object.cursor(dictionary=True)
+        mycursor.execute("SELECT COUNT(`id`) FROM `attractions` ")
+        nums = mycursor.fetchone()
+        nums= nums["COUNT(`id`)"]
+        if int(nums)<int(attractionId):
+            return  jsonify ({
+                "error":True,
+                "message":"景點編號不正確"
+            }) 
+        if int(nums)>=int(attractionId):
+            mycursor.execute("SELECT * FROM attractions WHERE  id=%s", [attractionId])
+            myresult=mycursor.fetchone()
+            result_all=[]
+            new_images=[]
+            images=myresult["images"].split(",")
+            # if '' in images:
+            # images.remove('')
+            for n in range(len(images)):
+                images_https=images[n]
+                new_images.append(images_https)
+
+            result_all=(
+                {
                     "id":myresult["id"],
                     "name":myresult["name"],
                     "category":myresult["category"],
@@ -67,46 +73,50 @@ def attractionId():
                     "transport":myresult["transport"],
                     "lat":myresult["lat"],
                     "lng":myresult["lng"],
-                    "images":myresult["images_image"],
-                }
+                    "images":new_images
+                        
+                    })
+            return jsonify({
+                "data": result_all
             })
-    except Error as e:
-        return  jsonify ({"error":True},e)
-    finally:
-        # closing database connection.    
+    except :
+        return  jsonify ({
+                "error":True,
+                "message":"伺服器內部錯誤"
+            })
+    finally:   
         mycursor.close()
         connection_object.close()
-        print("DONE!") 
+        print("DONE") 
+
+#取得所有的景點分類名稱列表
+@app.route("/api/categories",methods=["GET"]) 
+def categories():
+
+    try:
+        connection_object=connection_pool.get_connection()
+        mycursor = connection_object.cursor()
+        mycursor.execute("SELECT category FROM attractions")
+        categories = mycursor.fetchall()
+        results=[]
+        for category in categories:
+            category=category[0]
+            if(category in results):
+                continue
+            else:
+                results.append(category)
+                print(results)
         return jsonify({
-                "data":{
-                    "id":myresult["id"],
-                    "name":myresult["name"],
-                    "category":myresult["category"],
-                    "description":myresult["description"],
-                    "address":myresult["address"],
-                    "transport":myresult["transport"],
-                    "lat":myresult["lat"],
-                    "lng":myresult["lng"],
-                    "images":myresult["images_image"],
-                }
+            "data": results
             })
-
-    # sql = "INSERT INTO attractions (id, name, category, description, address, transport, mrt, lat, lng) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
-    # val = (id, name, category, description, address, transport, mrt, lat, lng)
-
-    # try:
-    # #  get the connection object from a connection pool
-    #     connection_object=connection_pool.get_connection() 
-    #     cursor=connection_object.cursor() #open MySQL
-    #     cursor.execute(sql,val)
-    #     connection_object.commit()
-    # except Error as e:
-    #     print("Error while connecting to MySQL using Connection pool ", e)
-    # finally:
-    # # closing database connection.    
-    #     cursor.close()
-    #     connection_object.close()
-    # print("DONE") 
-
+    except :
+            return  jsonify ({
+                    "error":True,
+                    "message":"伺服器內部錯誤"
+                })
+    finally:    
+        mycursor.close()
+        connection_object.close()
+        print("DONE")
 
 app.run(port=3000,debug=True)
