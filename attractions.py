@@ -35,13 +35,7 @@ def attractions():
         total_Page=math.floor(total_data/12)
         # print(total_Page)
         if input_keyword != None:
-            mycursor.execute("SELECT COUNT(`name`) FROM attractions WHERE LOCATE( %s ,`name`) ",  [input_keyword])
-            keyword_data=mycursor.fetchone()
-            keyword_data=keyword_data["COUNT(`name`)"]
-            print(keyword_data)
-            keyword_Page=math.floor(keyword_data/12)
-            print(keyword_Page)
-            mycursor.execute("SELECT * FROM attractions WHERE LOCATE( %s ,`name`)  LIMIT %s ", [input_keyword,(input_Page*12)])
+            mycursor.execute("SELECT * FROM attractions WHERE LOCATE( %s ,`name`)  LIMIT %s,12 ", [input_keyword,(input_Page*12)])
             myresult = mycursor.fetchall()
             # print(myresult)
             result_all=[]
@@ -124,6 +118,7 @@ def attractions():
         mycursor.close()
         connection_object.close()
         print("DONE") 
+
 
 app.run(port=3000,debug=True)
 
