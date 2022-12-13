@@ -28,111 +28,27 @@
           <input
             type="text"
             placeholder="輸入景點名稱查詢"
-            id="search_keyword"
+            id="keyword_value"
+            class="keyword_value"
+            name="keyword_value"
+            onfocus="categoryview()"
+            autocomplete="off"
           />
+          <div class="category_list" onclick="hideview()"></div>
           <button class="search_button"></button>
         </div>
       </div>
     </header>
     <main>
-      <div class="attr">
-        <div class="attr_img"></div>
-        <div class="attr_name"></div>
+      <!-- <div class="attr">
+        <div class="attr_img" id="img"></div>
+        <div class="attr_name" id="name">行天宮</div>
         <div class="attr_box">
-          <div class="attr_mrt"></div>
-          <div class="attr_cat"></div>
-        </div>
-      </div>
-      <div class="attr">
-        <div class="attr_img"></div>
-        <div class="attr_name"></div>
-        <div class="attr_box">
-          <div class="attr_mrt"></div>
-          <div class="attr_cat"></div>
-        </div>
-      </div>
-      <div class="attr">
-        <div class="attr_img"></div>
-        <div class="attr_name"></div>
-        <div class="attr_box">
-          <div class="attr_mrt"></div>
-          <div class="attr_cat"></div>
-        </div>
-      </div>
-      <div class="attr">
-        <div class="attr_img"></div>
-        <div class="attr_name"></div>
-        <div class="attr_box">
-          <div class="attr_mrt"></div>
-          <div class="attr_cat"></div>
-        </div>
-      </div>
-      <div class="attr">
-        <div class="attr_img"></div>
-        <div class="attr_name"></div>
-        <div class="attr_box">
-          <div class="attr_mrt"></div>
-          <div class="attr_cat"></div>
-        </div>
-      </div>
-      <div class="attr">
-        <div class="attr_img"></div>
-        <div class="attr_name"></div>
-        <div class="attr_box">
-          <div class="attr_mrt"></div>
-          <div class="attr_cat"></div>
-        </div>
-      </div>
-      <div class="attr">
-        <div class="attr_img"></div>
-        <div class="attr_name"></div>
-        <div class="attr_box">
-          <div class="attr_mrt"></div>
-          <div class="attr_cat"></div>
-        </div>
-      </div>
-      <div class="attr">
-        <div class="attr_img"></div>
-        <div class="attr_name"></div>
-        <div class="attr_box">
-          <div class="attr_mrt"></div>
-          <div class="attr_cat"></div>
-        </div>
-      </div>
-      <div class="attr">
-        <div class="attr_img"></div>
-        <div class="attr_name"></div>
-        <div class="attr_box">
-          <div class="attr_mrt"></div>
-          <div class="attr_cat"></div>
-        </div>
-      </div>
-      <div class="attr">
-        <div class="attr_img"></div>
-        <div class="attr_name"></div>
-        <div class="attr_box">
-          <div class="attr_mrt"></div>
-          <div class="attr_cat"></div>
-        </div>
-      </div>
-      <div class="attr">
-        <div class="attr_img"></div>
-        <div class="attr_name"></div>
-        <div class="attr_box">
-          <div class="attr_mrt"></div>
-          <div class="attr_cat"></div>
-        </div>
-      </div>
-      <div class="attr">
-        <div class="attr_img"></div>
-        <div class="attr_name"></div>
-        <div class="attr_box">
-          <div class="attr_mrt"></div>
-          <div class="attr_cat"></div>
-        </div>
-      </div>
+          <div class="attr_mrt" id="mrt">行天宮</div>
+          <div class="attr_cat" id="cat">宗教信仰</div>
+      </div> -->
     </main>
-
-    <footer>COPYRIGHT © 2021 台北一日遊</footer>
+    <footer>COPYRIGHT © 2022 台北一日遊</footer>
+    <script src="../static/app.js"></script>
   </body>
 </html>
