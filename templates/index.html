@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+    <title>Taipei Trip 台北一日遊</title>
+  </head>
+  <body>
+    <nav>
+      <!-- 左上標題 -->
+      <div class="nav_title">
+        台北一日遊
+        <!-- 右上選單 -->
+        <div class="nav_items">
+          <div class="nav_item">預定行程</div>
+          <div class="nav_item">登入/註冊</div>
+        </div>
+      </div>
+    </nav>
+    <header>
+      <div class="Welcome">
+        <div class="Welcome_slogan1">輕鬆享受台北一日休閒</div>
+        <br />
+        <div class="Welcome_slogan2">探索每個角落，體驗城市的深度旅遊行程</div>
+        <div class="Welcome_search">
+          <input
+            type="text"
+            placeholder="輸入景點名稱查詢"
+            id="keyword_value"
+            class="keyword_value"
+            name="keyword_value"
+            onfocus="categoryview()"
+            autocomplete="off"
+          />
+          <div class="category_list" onclick="hideview()"></div>
+          <button class="search_button"></button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- <div class="attr">
+        <div class="attr_img" id="img"></div>
+        <div class="attr_name" id="name">行天宮</div>
+        <div class="attr_box">
+          <div class="attr_mrt" id="mrt">行天宮</div>
+          <div class="attr_cat" id="cat">宗教信仰</div>
+      </div> -->
+    </main>
+    <footer>COPYRIGHT © 2022 台北一日遊</footer>
+    <script src="../static/app.js"></script>
+  </body>
+</html>

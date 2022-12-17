@@ -1,3 +1,4 @@
+
 from flask import Flask
 from flask import request
 from flask import render_template #幫助取出樣板檔案的內容，送到前端
@@ -6,6 +7,10 @@ from mysql.connector import pooling
 from flask import jsonify 
 import math
 from mysql.connector import Error
+# from flask_cors import CORS
+
+
+
 
 connection_pool=pooling.MySQLConnectionPool(
                                             pool_name="mysqlpool",
@@ -16,8 +21,12 @@ connection_pool=pooling.MySQLConnectionPool(
                                             user='root',
                                             password='wh1999ne123')
 app=Flask(__name__)
-app.secret_key="any string but secret"
+# CORS(app, resources={r"/api/*": {"origins": "*"}})
 
+app.secret_key="any string but secret"
+app.config["JSON_AS_ASCII"] = False #把對象序列化為ASCII-encoded JSON 
+app.config["TEMPLATES_AUTO_RELOAD"] = True #當模板改變時重載
+app.config['JSON_SORT_KEYS'] = False
 
 #Pages
 @app.route("/")
@@ -111,6 +120,7 @@ def attractions():
                         "description":result["description"],
                         "address":result["address"],
                         "transport":result["transport"],
+                        "mrt":result["mrt"],
                         "lat":result["lat"],
                         "lng":result["lng"],
                         "images":new_images           
@@ -173,6 +183,7 @@ def getattraction(attractionId):
                     "description":myresult["description"],
                     "address":myresult["address"],
                     "transport":myresult["transport"],
+                    "mrt":myresult["mrt"],
                     "lat":myresult["lat"],
                     "lng":myresult["lng"],
                     "images":new_images
