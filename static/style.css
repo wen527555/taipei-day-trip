@@ -2,18 +2,18 @@
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 54px 320px auto 104px;
-  grid-template-rows: 54px 320px auto 104px;
+      grid-template-rows: 54px 320px auto 104px;
   font-family: "Noto Sans TC";
   font-style: normal;
   -ms-grid-column-align: center;
-  justify-self: center;
+      justify-self: center;
 }
 
 nav {
@@ -22,10 +22,10 @@ nav {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto minmax(300px, 1200px) auto;
-  grid-template-columns: auto minmax(300px, 1200px) auto;
+      grid-template-columns: auto minmax(300px, 1200px) auto;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: -webkit-sticky;
   position: sticky;
   background-color: #ffffff;
@@ -39,7 +39,7 @@ nav .nav_title {
   -ms-grid-column-span: 1;
   grid-column: 2/3;
   -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   font-weight: 700;
   font-size: 30px;
   line-height: 34px;
@@ -53,14 +53,14 @@ nav .nav_items {
   display: grid;
   grid-auto-flow: column;
   -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: end;
+      -ms-flex-pack: end;
+          justify-content: end;
 }
 
 nav .nav_items .nav_item {
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   font-weight: 500;
   font-size: 16px;
   line-height: 13px;
@@ -76,10 +76,10 @@ header {
   -ms-grid-row-span: 1;
   grid-row: 2/3;
   -ms-grid-columns: auto minmax(300px, 1200px) auto;
-  grid-template-columns: auto minmax(300px, 1200px) auto;
+      grid-template-columns: auto minmax(300px, 1200px) auto;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-image: url(../static/welcome.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -101,8 +101,8 @@ header .Welcome .Welcome_slogan1 {
   color: #f8f8f8;
   text-shadow: 0px 0px 30px #aabbcc;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 header .Welcome .Welcome_slogan2 {
@@ -112,14 +112,14 @@ header .Welcome .Welcome_slogan2 {
   color: #f8f8f8;
   text-shadow: 0px 0px 30px #aabbcc;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 header .Welcome .Welcome_search {
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -169,7 +169,7 @@ header .Welcome .Welcome_search .search_button {
 
 .categoryview {
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   position: absolute;
   width: 400px;
   height: auto;
@@ -177,7 +177,7 @@ header .Welcome .Welcome_search .search_button {
   left: 0px;
   background: #ffffff;
   -webkit-box-shadow: 0px 0px 20px #aabbcc;
-  box-shadow: 0px 0px 20px #aabbcc;
+          box-shadow: 0px 0px 20px #aabbcc;
   border-radius: 5px;
   color: #000000;
   display: none;
@@ -195,8 +195,8 @@ header .Welcome .Welcome_search .search_button {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #000000;
   background-color: #ffffff;
   border-radius: 5px;
@@ -222,28 +222,29 @@ main {
   -ms-grid-row: 3;
   -ms-grid-row-span: 1;
   grid-row: 3/4;
-
-  grid-template-columns: repeat(4, 270px);
-
-  grid-template-rows: repeat(3, 242px);
+  -ms-grid-columns: (270px)[4];
+      grid-template-columns: repeat(4, 270px);
+  -ms-grid-rows: (242px)[3];
+      grid-template-rows: repeat(3, 242px);
   grid-gap: 30px;
   margin-top: 55px;
   margin-bottom: 55px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-grid-column-align: center;
-  justify-self: center;
+      justify-self: center;
 }
 
 main .attr {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 4fr 1fr 1fr;
-  grid-template-rows: 4fr 1fr 1fr;
+      grid-template-rows: 4fr 1fr 1fr;
   width: 270px;
   height: 242px;
   border: 1px solid #e8e8e8;
+  text-decoration: none;
 }
 
 main .attr .attr_img {
@@ -260,8 +261,8 @@ main .attr .attr_name {
   font-size: 16px;
   color: #ffffff;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 10px;
   background: #000000;
   opacity: 0.6;
@@ -274,7 +275,7 @@ main .attr .attr_box {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 135px 135px;
-  grid-template-columns: 135px 135px;
+      grid-template-columns: 135px 135px;
 }
 
 main .attr .attr_box .attr_mrt {
@@ -282,10 +283,10 @@ main .attr .attr_box .attr_mrt {
   font-size: 16px;
   color: #757575;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   -ms-grid-column-align: start;
-  justify-self: start;
+      justify-self: start;
   margin-left: 10px;
 }
 
@@ -294,10 +295,10 @@ main .attr .attr_box .attr_cat {
   font-size: 16px;
   color: #757575;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   -ms-grid-column-align: end;
-  justify-self: end;
+      justify-self: end;
   margin-right: 10px;
 }
 
@@ -310,8 +311,8 @@ footer {
   font-size: 16px;
   line-height: 13px;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   justify-items: center;
   color: #ffffff;
 }
@@ -322,26 +323,26 @@ footer {
   }
   main {
     width: 900px;
-
-    grid-template-columns: repeat(3, 270px);
-
-    grid-template-rows: repeat(4, 242px);
+    -ms-grid-columns: (270px)[3];
+        grid-template-columns: repeat(3, 270px);
+    -ms-grid-rows: (242px)[4];
+        grid-template-rows: repeat(4, 242px);
     -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
 @media (max-width: 900px) {
   main {
     width: 600px;
-
-    grid-template-columns: repeat(2, 270px);
-
-    grid-template-rows: repeat(6, 242px);
+    -ms-grid-columns: (270px)[2];
+        grid-template-columns: repeat(2, 270px);
+    -ms-grid-rows: (242px)[6];
+        grid-template-rows: repeat(6, 242px);
     -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   main .attr {
     height: auto;
@@ -351,7 +352,7 @@ footer {
 @media (max-width: 610px) {
   header {
     -ms-grid-columns: auto;
-    grid-template-columns: auto;
+        grid-template-columns: auto;
   }
   header .Welcome_search {
     max-width: 230px;
@@ -362,12 +363,12 @@ footer {
   main {
     width: 360px;
     -ms-grid-columns: 90%;
-    grid-template-columns: 90%;
-
-    grid-template-rows: repeat(12, 280px);
+        grid-template-columns: 90%;
+    -ms-grid-rows: (280px)[12];
+        grid-template-rows: repeat(12, 280px);
     justify-items: center;
     -ms-grid-column-align: center;
-    justify-self: center;
+        justify-self: center;
     grid-gap: 15px;
   }
   main .attr {
@@ -375,10 +376,10 @@ footer {
   }
   main .attr .attr_box {
     -ms-grid-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 /*# sourceMappingURL=style.css.map */
