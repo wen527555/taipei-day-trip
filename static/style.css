@@ -40,6 +40,10 @@ nav .nav_title {
   grid-column: 2/3;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
+}
+
+nav .nav_title a {
+  text-decoration: none;
   font-weight: 700;
   font-size: 30px;
   line-height: 34px;

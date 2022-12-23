@@ -40,6 +40,10 @@ nav .nav_title {
   grid-column: 2/3;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
+}
+
+nav .nav_title a {
+  text-decoration: none;
   font-weight: 700;
   font-size: 30px;
   line-height: 34px;
@@ -48,7 +52,7 @@ nav .nav_title {
   margin-left: 5px;
 }
 
-nav .nav_items {
+nav .nav_title .nav_items {
   display: -ms-grid;
   display: grid;
   grid-auto-flow: column;
@@ -57,7 +61,7 @@ nav .nav_items {
           justify-content: end;
 }
 
-nav .nav_items .nav_item {
+nav .nav_title .nav_items .nav_item {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -238,6 +242,10 @@ main .upperPart .right_box .attrs_name_info {
   font-weight: 500;
   font-size: 16px;
   line-height: 13px;
+}
+
+main .upperPart .right_box input[type="date"]::-webkit-calendar-picker-indicator {
+  margin: 4px;
 }
 
 main .upperPart .right_box .booking {
