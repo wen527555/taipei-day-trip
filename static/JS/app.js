@@ -163,6 +163,7 @@ function appendContent(result) {
     attr_box.appendChild(attr_cat);
 
     all_items.appendChild(attr_box);
+    all_items.href = `/attraction/${result.data[i].id}`;
     main.appendChild(all_items);
   }
   nextPage = result.data.nextPage;

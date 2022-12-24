@@ -210,7 +210,7 @@ def categories():
         mycursor = connection_object.cursor(dictionary=True)
         mycursor.execute("SELECT distinct category FROM `attractions` ")
         myresult = mycursor.fetchall()
-        print(myresult)
+        print(myresult)         
         categories=[]
 
         for x in myresult:
